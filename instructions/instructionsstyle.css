@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-image: url("./background.png");
+  background-color: #f9da88;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.instructionsheading {
+  margin-top: -25px;
+  margin-left: 13%;
+  width: 90%;
+  font-family: "Exo 2", sans-serif;
+  font-size: 60px;
+  color: #604131;
+}
+.rules{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 73%;
+
+    margin-top: -60px;
+    height: 350px;
+    margin-left: 10%;
+    font-family:"Exo 2", sans-serif ;
+    font-size: 32px;
+    color: #604131 ;
+    justify-content: space-between;
+    
+}
+.loginsignup{
+    margin-top: 10%;
+    margin-left: 23%;
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    font-family: "Exo 2", sans-serif ;
+    font-size: 30px;
+   color: white;
+    justify-content: space-between;
+
+}
