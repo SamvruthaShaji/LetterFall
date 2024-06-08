@@ -1,21 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 body {
-    font-family: Arial, sans-serif;
+   
+
+    
+    font-family: "Exo 2",sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url("../Assets/feedback.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    
+    margin: 50px;
+    
+   
+  
 }
 
 h1 {
-    text-align: center;
+   
     color: #333;
 }
 
@@ -37,10 +46,12 @@ label {
 input[type="text"],
 textarea {
     width: 100%;
+    background-color: #FBF1DE;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    color: #6B4937;
 }
 
 textarea {
@@ -60,3 +71,32 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+    .star {
+    font-size: 10vh;
+    cursor: pointer;
+    }
+    
+    .one {
+    color: rgb(255, 0, 0);
+    }
+    
+    .two {
+    color: rgb(255, 106, 0);
+    }
+    
+    .three {
+    color: rgb(251, 255, 120);
+    }
+    
+    .four {
+    color: rgb(255, 255, 0);
+    }
+    
+    .five {
+    color: rgb(24, 159, 14);
+    }
+    .rated {
+        color: #ffcc00; /* Yellow color */
+    }
+    
