@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background-image: url("./background.png");
+  background-image: url("../Assets/Instructions.png");
   background-color: #f9da88;
   background-size: contain;
   background-position: center;
