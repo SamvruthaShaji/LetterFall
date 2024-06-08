@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    
+}
+
+.background {
+    background-image: url('../Assets/HomePage.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.p1 {
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 77.3px;
+}
+
+.p2 {
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 72.9px;
+}
