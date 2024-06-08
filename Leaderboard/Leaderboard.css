@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Exo 2", sans-serif;
+}
+
+.LeaderBoardBackground {
+  background-image: url("../Assets/LeaderBoard.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9da88;
+  display: flex;
+  flex-direction: column;
+}
+
+.LeaderBoardTitle {
+  text-align: center;
+}
+
+.LeaderBoardp1 {
+  font-size: 36px;
+  color: #6B4937;
+  margin: 20px 0; 
+}
+
+.LeaderBoardContent {
+  text-align: center;
+  flex: 1; 
+}
+
+.LeaderBoardList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  color: white;
+  margin-top: 90px;
+}
+
+.LeaderBoardList li {
+  margin: 10px 0; 
+}
+
+.BackButton {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #6B4937;
+    border: 3px solid #6B4937;
+    padding: 5px;
+  }
+  
+  .BackButton:hover {
+    text-decoration: underline;
+  }
+  
