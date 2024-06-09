@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../Assets/feedback.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #F9DA88;
+   
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #F9DA88;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-item {
+    background-color: #FBF1DE;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.feedback-item h3 {
+    margin-top: 0;
+}
+
+.feedback-item p {
+    margin: 5px 0;
+}
+
+.feedback-item p:first-child {
+    margin-top: 0;
+}
+
+.feedback-item p:last-child {
+    margin-bottom: 0;
+}
