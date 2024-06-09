@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Letters Game</title>
+    <link rel="stylesheet" href="Game.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="bucket"></div>
+        <div id="falling-letters"></div>
+        <div id="timer">Time: <span id="time-left">20</span>s</div>
+    </div>
+    <div id="result-container" style="display: none;">
+        <p>Caught Letters: <span id="caught-letters"></span></p>
+        <p>Enter words:</p>
+        <input type="text" id="input-words" placeholder="Enter words here">
+        <button id="submit-words">Submit</button>
+        <p id="score"></p>
+    </div>
+    <script src="Game.js"></script>
+</body>
+</html>
