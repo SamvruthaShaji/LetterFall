@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catch the Falling Letters Game</title>
+    <title>Letter Fall</title>
     <link rel="stylesheet" href="Game.css">
 </head>
 <body>
     <div id="game-container">
-        <div id="bucket"></div>
-        <div id="falling-letters"></div>
-        <div id="timer">Time: <span id="time-left">20</span>s</div>
+        <div id="basket"></div>
+        <div id="timer">20</div>
     </div>
-    <div id="result-container" style="display: none;">
-        <p>Caught Letters: <span id="caught-letters"></span></p>
-        <p>Enter words:</p>
+    <div id="caught-letters"></div>
+    <div id="word-entry-container" style="display: none;">
+        <p>Time left to enter words: <span id="word-timer">60</span>s</p>
         <input type="text" id="input-words" placeholder="Enter words here">
         <button id="submit-words">Submit</button>
         <p id="score"></p>
     </div>
+    <button id="goto-next-game" style="display: none;">Go to Next Game</button>
     <script src="Game.js"></script>
 </body>
 </html>
