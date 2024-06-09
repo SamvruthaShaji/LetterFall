@@ -18,8 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputWords = document.getElementById('input-words');
     const submitWordsButton = document.getElementById('submit-words');
     const scoreDisplay = document.getElementById('score');
+    const errorDisplay = document.createElement('p');
+    errorDisplay.id = 'error';
+    wordEntryContainer.appendChild(errorDisplay);
     let wordEntryTimeLeft = 60; // 60 seconds for word entry
     let wordEntryInterval;
+    let totalScore = 0;
+    let scoredWords = new Set(); // Keep track of words already scored
 
     function createFallingLetter(letter) {
         const letterElement = document.createElement('div');
@@ -82,8 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showCaughtLetters() {
-        caughtLettersContainer.textContent = 'Caught Letters: ' + caughtLetters.join(', ');
-        caughtLettersContainer.style.display = 'block';
+        caughtLettersContainer.textContent = '';
+        caughtLetters.forEach(letter => {
+            const letterBox = document.createElement('div');
+            letterBox.textContent = letter;
+            letterBox.classList.add('letter-box');
+            letterBox.addEventListener('click', () => {
+                inputWords.value += letter;
+            });
+            caughtLettersContainer.appendChild(letterBox);
+        });
     }
 
     function updateTimer() {
@@ -110,36 +123,59 @@ document.addEventListener('DOMContentLoaded', () => {
         wordTimerDisplay.textContent = wordEntryTimeLeft;
         if (wordEntryTimeLeft <= 0) {
             clearInterval(wordEntryInterval);
-            calculateScore();
+            inputWords.disabled = true;
+            submitWordsButton.disabled = true;
+            calculateFinalScore();
         }
     }
 
-    submitWordsButton.addEventListener('click', calculateScore);
+    inputWords.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            submitWord();
+        }
+    });
 
-    async function calculateScore() {
-        clearInterval(wordEntryInterval);
-        const enteredWords = inputWords.value.split(/\s+/).filter(word => word.length > 0);
-        let score = 0;
-        for (let word of enteredWords) {
-            const isValid = await validateWord(word);
-            if (isValid) {
-                let valid = true;
-                let tempCaughtLetters = [...caughtLetters];
-                for (let letter of word.toUpperCase()) {
-                    const index = tempCaughtLetters.indexOf(letter);
-                    if (index === -1) {
-                        valid = false;
-                        break;
-                    } else {
-                        tempCaughtLetters.splice(index, 1);
-                    }
-                }
-                if (valid) {
-                    score += word.length;
+    submitWordsButton.addEventListener('click', submitWord);
+
+    function submitWord() {
+        const word = inputWords.value.trim();
+        if (word.length > 0) {
+            calculateScore(word);
+            inputWords.value = '';
+        }
+    }
+
+    async function calculateScore(word) {
+        if (scoredWords.has(word.toUpperCase())) {
+            errorDisplay.textContent = `Word already used: ${word}`;
+            return;
+        }
+
+        const isValid = await validateWord(word);
+        if (isValid) {
+            let valid = true;
+            let tempCaughtLetters = [...caughtLetters];
+            for (let letter of word.toUpperCase()) {
+                const index = tempCaughtLetters.indexOf(letter);
+                if (index === -1) {
+                    valid = false;
+                    break;
+                } else {
+                    tempCaughtLetters.splice(index, 1);
                 }
             }
+            if (valid) {
+                totalScore += word.length;
+                scoreDisplay.textContent = `Score: ${totalScore}`;
+                errorDisplay.textContent = ''; // Clear any previous error message
+                scoredWords.add(word.toUpperCase()); // Mark word as scored
+            } else {
+                errorDisplay.textContent = `Invalid word: ${word}`;
+            }
+        } else {
+            errorDisplay.textContent = `Invalid word: ${word}`;
         }
-        scoreDisplay.textContent = `Score: ${score}`;
     }
 
     async function validateWord(word) {
@@ -152,6 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Error validating word "${word}":`, error);
             return false;
         }
+    }
+
+    function calculateFinalScore() {
+        scoreDisplay.textContent = `Final Score: ${totalScore}`;
     }
 
     // Move basket with mouse
@@ -167,10 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
     startFallingLetters();
     timerId = setInterval(updateTimer, 1000); // Update timer every second
 
-    // Add event listener to the button
-    const gotoNextGameButton = document.getElementById('goto-next-game');
-    gotoNextGameButton.addEventListener('click', () => {
-        // Redirect to the linked game
-        window.location.href = '../WordFinder/Home.html';
+    // Add event
+    
+        // Add event listener to the button
+        const gotoNextGameButton = document.getElementById('goto-next-game');
+        gotoNextGameButton.addEventListener('click', () => {
+            // Redirect to the linked game
+            window.location.href = '../WordFinder/Home.html';
+        });
     });
-});

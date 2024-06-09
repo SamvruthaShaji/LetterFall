@@ -42,9 +42,28 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 2em;
-    display: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-box {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.letter-box:hover {
+    background-color: #eee;
+}
+
+.highlight {
+    background-color: #ffcc00;
 }
 
 #timer {
