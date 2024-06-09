@@ -1,16 +1,17 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.getElementById('game-container');
     const caughtLettersContainer = document.getElementById('caught-letters');
     const basket = document.getElementById('basket');
+    const timerDisplay = document.getElementById('timer');
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     const vowels = 'AEIOU';
-    const gameDuration = 15000; // 15 seconds
+    const gameDuration = 20000; // 20 seconds
     const letterInterval = 1000; // Create a new letter every second
     let fallenLetters = new Set();
     let caughtLetters = [];
     let vowelsCount = 0;
     let intervalId;
+    let timerId;
 
     function createFallingLetter(letter) {
         const letterElement = document.createElement('div');
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         intervalId = setInterval(() => {
             if (fallenLetters.size >= letters.length || (Date.now() - startTime > gameDuration && vowelsCount >= 3)) {
                 clearInterval(intervalId);
-                setTimeout(showCaughtLetters, 1000); // Show caught letters after a short delay
+                setTimeout(endGame, 1000); // End game after a short delay
                 return;
             }
 
@@ -77,6 +78,19 @@ document.addEventListener('DOMContentLoaded', () => {
         caughtLettersContainer.style.display = 'block';
     }
 
+    function updateTimer() {
+        const timeLeft = Math.max(0, Math.ceil((gameDuration - (Date.now() - startTime)) / 1000));
+        timerDisplay.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+        }
+    }
+
+    function endGame() {
+        basket.style.display = 'none';
+        showCaughtLetters();
+    }
+
     // Move basket with mouse
     document.addEventListener('mousemove', (event) => {
         const basketWidth = basket.offsetWidth;
@@ -88,4 +102,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startTime = Date.now();
     startFallingLetters();
+    timerId = setInterval(updateTimer, 1000); // Update timer every second
 });
