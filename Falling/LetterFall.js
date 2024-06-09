@@ -85,11 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId);
         }
     }
+    function lag(){
+        window.open('../WordFinder/Home.html','_blank');
+    }
 
     function endGame() {
         basket.style.display = 'none';
         showCaughtLetters();
+        const timeout = setTimeout(lag,5000);
     }
+   
 
     // Move basket with mouse
     document.addEventListener('mousemove', (event) => {
