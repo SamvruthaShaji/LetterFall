@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
+
+body{
+    display: flex;
+    background-image: url('../Assets/signuppage.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    background-color: #F9DA88;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signup-input {
+    
+    width: 80%;
+    text-align: center;
+}
+
+.signup input {
+    width: 70%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    background-color: #FBF1DE;
+    text-align: center;
+    font-size: 20px;
+}
+.signup input::placeholder {
+    color: #6B4937;
+    text-align: center;
+    font-size: 25px; 
+    padding-top: 50px;  
+    font-family: 'Varela Round' ;
+    opacity: 0.8;
+}
+.signup-button {
+    background-color: none;
+    margin-top: 30px;
+}
+#signup-btn {
+    background: none;
+    color: #6B4937;
+    font-family:'Exo 2';
+    font-size: 30px;
+    border: none;
+    font-weight: bold;
+
+    
+}
