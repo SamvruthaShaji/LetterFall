@@ -1,11 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="signin.css">
-    <script source="signin.js"></script>
 </head>
 <body>
     
@@ -14,10 +14,20 @@
             <h2 id="signin_heading">Sign In</h2>
             <input type="text" placeholder="Username" id="Name" name="Name">
             <input type="password" placeholder="Password" id="Password" name="password">
-            <button class="signin_btn"type="submit" onclick="validate()">CONTINUE</button></div>
+            <button id="signin_btn" type="submit">CONTINUE</button>
             <a id="forget_password_link" href="#">Forget Password?</a>
-            <div id="login_successfull">Login Successfull</div>  
-        </form>
+            <div id="login_successfull">Login Successful</div>  
+        </form> 
     </section>
+
+      <audio controls autoplay loop>
+            <source src="../sound/backgroundSound.mp3" type="audio/mp3">
+     </audio>  
+    <!-- Audio element for click sound -->
+    <audio id="clickSound" src="../sound/buttonClickSound.mp3" preload="auto"></audio>
+
+    <!-- JavaScript files -->
+    <script src="signin.js"></script>
+    <script src="sound.js"></script>
 </body>
 </html>
