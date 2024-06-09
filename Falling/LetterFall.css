@@ -29,7 +29,7 @@
   width: 70px;
   height: 60px;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   background-color: brown;
@@ -67,4 +67,20 @@
 /* Additional CSS for letter inside basket */
 .letter.inside-basket {
   opacity: 0; /* Hide the letter */
+}
+
+/* Add styles for the button */
+#goto-next-game {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#goto-next-game:hover {
+  background-color: #0056b3;
 }

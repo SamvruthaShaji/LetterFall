@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function endGame() {
         basket.style.display = 'none';
         showCaughtLetters();
+        gotoNextGameButton.style.display = 'block'; // Show the button
     }
 
     // Move basket with mouse
@@ -103,4 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const startTime = Date.now();
     startFallingLetters();
     timerId = setInterval(updateTimer, 1000); // Update timer every second
+
+    // Add event listener to the button
+    const gotoNextGameButton = document.getElementById('goto-next-game');
+    gotoNextGameButton.addEventListener('click', () => {
+        // Redirect to the linked game
+        window.location.href = '../WordFinder/Home.html';
+    });
 });
