@@ -7,19 +7,22 @@ body {
 
     
     font-family: "Exo 2",sans-serif;
-    margin: 0;
-    padding: 0;
+
     background-image: url("../Assets/feedback.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: contain;
+    background-position: center;
+    background-color: #F9DA88;
+    height: 86.4vh;
+   
 }
 
 .container {
     width: 30%;
+  
+    margin: 90px;
     
-    margin: 50px;
-    
-   
+
   
 }
 
@@ -59,8 +62,8 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #FBF1DE;
+    color: #6B4937;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -69,7 +72,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #F9DA88;
 }
 
     .star {
@@ -99,4 +102,32 @@ input[type="submit"]:hover {
     .rated {
         color: #ffcc00; /* Yellow color */
     }
-    
+    .notification {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Sit on top */
+    left: 50%; /* Centered horizontally */
+    top: 20px; /* 20px from the top */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color:#6B4937; /* Green background */
+    color: white; /* White text */
+    padding: 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+
+.notification .closebtn {
+    margin-left: 15px; /* Margin between text and close button */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    float: right; /* Float the close button to the right */
+    font-size: 22px; /* Font size */
+    line-height: 20px; /* Line height */
+    cursor: pointer; /* Cursor pointer */
+    transition: 0.3s; /* 0.3 second transition */
+}
+
+.notification .closebtn:hover {
+    color: black; /* Change color on hover */
+}
+
