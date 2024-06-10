@@ -1,0 +1,28 @@
+body{
+    background-image: url(../Assets/ScorePage.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    background-color: #F9DA88;
+}
+
+.confetti {
+    position: absolute;
+    background: rgb(210, 68, 68);
+    width: 10px;
+    height: 10px;
+    border-radius: 0%;
+    animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
