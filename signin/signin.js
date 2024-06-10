@@ -26,3 +26,11 @@
             return true;
         }
     </script> */}
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const signupButton = document.getElementById('signin-btn');
+    
+        signupButton.addEventListener('click', () => {
+            window.location.href = '../Ready/Ready.html';
+        });
+    });
