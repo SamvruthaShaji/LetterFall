@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordTimerDisplay = document.getElementById('word-timer');
     const inputWords = document.getElementById('input-words');
     const submitWordsButton = document.getElementById('submit-words');
+    const shuffleLettersButton = document.getElementById('shuffle-letters'); // Shuffle button
     const scoreDisplay = document.getElementById('score');
     const errorDisplay = document.createElement('p');
     errorDisplay.id = 'error';
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         intervalId = setInterval(() => {
             if (fallenLetters.size >= letters.length || (Date.now() - startTime > gameDuration && vowelsCount >= 3)) {
                 clearInterval(intervalId);
-                setTimeout(endGame, 1000); // End game after a short delay
+                setTimeout(endGame, 2000); // End game after a short delay
                 return;
             }
 
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(wordEntryInterval);
             inputWords.disabled = true;
             submitWordsButton.disabled = true;
+            shuffleLettersButton.disabled = true; // Disable shuffle button when time is up
             calculateFinalScore();
         }
     }
@@ -137,6 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     submitWordsButton.addEventListener('click', submitWord);
+
+    shuffleLettersButton.addEventListener('click', () => {
+        shuffleCaughtLetters();
+    });
 
     function submitWord() {
         const word = inputWords.value.trim();
@@ -155,14 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const isValid = await validateWord(word);
         if (isValid) {
             let valid = true;
-            let tempCaughtLetters = [...caughtLetters];
             for (let letter of word.toUpperCase()) {
-                const index = tempCaughtLetters.indexOf(letter);
-                if (index === -1) {
+                if (!caughtLetters.includes(letter)) {
                     valid = false;
                     break;
-                } else {
-                    tempCaughtLetters.splice(index, 1);
                 }
             }
             if (valid) {
@@ -171,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorDisplay.textContent = ''; // Clear any previous error message
                 scoredWords.add(word.toUpperCase()); // Mark word as scored
             } else {
-                errorDisplay.textContent = `Invalid word: ${word}`;
+                errorDisplay.textContent = `Invalid word using caught letters: ${word}`;
             }
         } else {
             errorDisplay.textContent = `Invalid word: ${word}`;
@@ -188,6 +190,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Error validating word "${word}":`, error);
             return false;
         }
+    }
+
+    function shuffleCaughtLetters() {
+        caughtLetters = caughtLetters.sort(() => Math.random() - 0.5);
+        showCaughtLetters();
     }
 
     function calculateFinalScore() {
@@ -207,12 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
     startFallingLetters();
     timerId = setInterval(updateTimer, 1000); // Update timer every second
 
-    // Add event
-    
-        // Add event listener to the button
-        const gotoNextGameButton = document.getElementById('goto-next-game');
-        gotoNextGameButton.addEventListener('click', () => {
-            // Redirect to the linked game
-            window.location.href = '../WordFinder/Home.html';
-        });
+    // Add event listener to the button
+    const gotoNextGameButton = document.getElementById('goto-next-game');
+    gotoNextGameButton.addEventListener('click', () => {
+        // Redirect to the linked game
+        window.location.href = '../WordFinder/Home.html';
     });
+});
