@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
     background-image: url(../Assets/ReadyPage.png);
     background-size: contain;
     background-position: center;
@@ -10,23 +10,23 @@ body{
     background-color: #F9DA88;
 }
 
-.question{
+.question {
     font-family: "Exo 2", sans-serif;
     font-size: 70px;
     color: #6B4937;
     text-align: center;
-   padding-top: 160px;
+    padding-top: 160px;
 }
 
-#countdown{
+#countdown {
     font-size: 5rem;
     color: #6B4937;
-    padding-left: 550px;
+    text-align: center;
     padding-top: 30px;
     animation: countdown-animation 1s ease-in-out;
 }
 
-@keyframes countdown-animation{
+@keyframes countdown-animation {
     0% {
         opacity: 1;
         transform: scale(1);
