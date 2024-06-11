@@ -180,12 +180,14 @@ body {
     color: #007bff;
 }
 #valid-words {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding-top: 40px;
+    /* font-style: bold; */
+    font-weight: bolder;
 }
 #valid-words li {
 

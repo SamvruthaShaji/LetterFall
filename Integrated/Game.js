@@ -215,8 +215,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayValidWord(word) {
+        const wordUpperCase = word.toUpperCase();
         const wordElement = document.createElement('li');
-        wordElement.textContent = word;
+        wordElement.textContent = wordUpperCase;
         validWordsContainer.appendChild(wordElement);
     }
 
