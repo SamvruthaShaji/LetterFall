@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorDisplay = document.createElement('p');
     errorDisplay.id = 'error';
     wordEntryContainer.appendChild(errorDisplay);
-    let wordEntryTimeLeft = 60; // 60 seconds for word entry
+    let wordEntryTimeLeft = 120; // 60 seconds for word entry
     let wordEntryInterval;
     let totalScore = 0;
     let scoredWords = new Set(); // Keep track of words already scored

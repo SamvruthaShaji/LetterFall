@@ -1,8 +1,13 @@
 * {
-    background-color: whitesmoke;
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
+    background-image: url('../Assets/signuppage.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
 }
 
 #game-container {
@@ -10,6 +15,9 @@
     height: 80vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .letter {
@@ -26,20 +34,24 @@
 }
 
 #basket {
+    background-image: url(../Assets/basket.png);
+    background-size: 105%;
+    /* background:no-repeat; */
+    background: cover;
     width: 70px;
     height: 60px;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: brown;
-    border: 2px solid black;
+    /* background-color: brown; */
+    /* border: 2px solid black; */
     z-index: 2; /* Ensure basket is above letters */
 }
 
 #caught-letters {
     position: absolute;
-    bottom: 10px;
+    bottom: 65%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -72,6 +84,7 @@
     right: 10px;
     font-size: 2em;
     z-index: 3; /* Ensure timer is above everything */
+    color: white;
 }
 
 @keyframes fall {
@@ -105,14 +118,21 @@
 }
 
 #word-entry-container {
+    position: relative;
+    bottom:480px;
     text-align: center;
     margin: 20px;
+
 }
 
 #input-words {
-    width: 100%;
+    position: relative;
+    left:320px;
+    align-items: center;
+    width: 50%;
     padding: 10px;
     margin: 10px 0;
+    text-align: center;
 }
 
 #submit-words {
@@ -129,6 +149,8 @@
 }
 
 #shuffle-letters {
+    position: relative;
+    left:10px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #ffc107;
@@ -142,13 +164,17 @@
 }
 
 #error {
+    position: relative;
+    top:30px;
     color: red;
     font-size: 16px;
     margin-top: 10px;
 }
 
 #score {
-    margin-top: 20px;
+    position: relative;
+    top:30px;
+    margin-top: 30px;
     font-size: 18px;
     color: #007bff;
 }
