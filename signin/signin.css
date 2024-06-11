@@ -53,7 +53,7 @@ input::placeholder {
   color: #6b4937;
   opacity: 0.8;
 }
-#signin-btn {
+#login {
   width: 70%;
   padding: 0.8rem;
   font-size: 3.8em;
@@ -62,7 +62,7 @@ input::placeholder {
   background-color: #f9da88;
   color: #6b4937;
 }
-#signin-btn:hover {
+#login:hover {
   cursor: pointer;
   color: black;
 }
