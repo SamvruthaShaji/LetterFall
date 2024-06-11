@@ -28,8 +28,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #333;
-    background-color: #fff;
+    /* border: 1px solid #333; */
+    /* background-color: #fff; */
     animation: fall linear forwards;
 }
 
@@ -62,11 +62,11 @@ body {
 .letter-box {
     width: 30px;
     height: 30px;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
+    margin: 05px;
     cursor: pointer;
 }
 

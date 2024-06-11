@@ -28,12 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createFallingLetter(letter) {
         const letterElement = document.createElement('div');
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        letterElement.style.color = randomColor; 
+        const inverseColor = invertColor(randomColor);
+        letterElement.style.backgroundColor = inverseColor; // Set the background color
         letterElement.textContent = letter;
         letterElement.classList.add('letter');
         gameContainer.appendChild(letterElement);
-
         const isVowel = vowels.includes(letter);
-        const speed = isVowel ? Math.random() * 2 + 1 : Math.random() * 5 + 3; // Vowels: 1-3s, Consonants: 3-8s
+        const speed = isVowel ? Math.random() * 2 + 3 : Math.random() * 5 + 3; // Vowels: 1-3s, Consonants: 3-8s
         letterElement.style.animationDuration = `${speed}s`;
         letterElement.style.left = `${Math.random() * 90}%`; // Random horizontal position
 
@@ -236,4 +239,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Redirect to the linked game
         window.location.href = '../WordFinder/Home.html';
     });
+    function invertColor(hex) {
+        if (hex.indexOf('#') === 0) {
+            hex = hex.slice(1);
+        }
+        // Convert hex to RGB
+        const r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16);
+        const g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16);
+        const b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
+    
+        // Combine RGB values and return the inverse color
+        return "#" + padZero(r) + padZero(g) + padZero(b);
+    }
+    
+    // Function to pad zeros
+    function padZero(str) {
+        return str.length === 1 ? "0" + str : str;
+    }
 });
