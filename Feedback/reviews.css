@@ -45,3 +45,14 @@ h1 {
 .feedback-item p:last-child {
     margin-bottom: 0;
 }
+
+.BackButton {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #6b4937;
+    border: 3px solid #6b4937;
+    padding: 5px;
+  }

@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=clear, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=clear, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="..\firebase\signup-js.js" defer></script>
-    <link rel="stylesheet" href="signup.css">
-</head>
-<body>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
     <section class="signup">
+      <p
+        style="
+          position: absolute;
+          top: 50px;
+          left: 545px;
+          color: #6b4937;
+          font-size: 35px;
+        "
+      >
+        SIGN UP
+      </p>
       <div class="signup-input">
-        <input type="text" id="user-name" placeholder="Username">
-        <input type="text" id="signup-email" placeholder="Email">
-        <input type="password" id="signup-password" placeholder="Password"> 
+        <input type="text" id="user-name" placeholder="Username" />
+        <input type="text" id="signup-email" placeholder="Email" />
+        <input type="password" id="signup-password" placeholder="Password" />
       </div>
       <div class="signup-button">
-          <button id="signupid">CREATE</button>
+        <button id="signupid">CREATE</button>
       </div>
       <p id="message"></p>
     </section>
-    <a href="../instructions/instructions.html" class="BackButton">&#8592; Back</a>
+    <a href="../instructions/instructions.html" class="BackButton"
+      >&#8592; Back</a
+    >
     <audio autoplay loop>
-      <source src="../Audio/backgroundSound.mp3" type="audio.mp3">
+      <source src="../Audio/backgroundSound.mp3" type="audio.mp3" />
     </audio>
     <script src="signup.js"></script>
-</body>
+  </body>
 </html>
