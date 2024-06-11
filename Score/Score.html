@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="Score.css" />
+    <script type="module" src="addScore.js" defer></script>
   </head>
   <body>
-    <div >
-        <p style="position: absolute; font-size: 70px; top: 0px; left: 500px; ">SCORE</p>
-        <p id="dataDisplay"></p>
+    <div>
+      <p style="position: absolute; font-size: 70px; top: 0px; left: 500px">
+        SCORE
+      </p>
+      <p id="dataDisplay"></p>
     </div>
     <div class="button-container">
       <button
@@ -31,13 +34,11 @@
         Feedback
       </button>
     </div>
-
-    <script src="Score.js"></script>
     <script>
       const receivedData = localStorage.getItem("myData");
 
       const dataDisplay = document.getElementById("dataDisplay");
-      dataDisplay.textContent = + receivedData;
+      dataDisplay.textContent = +receivedData;
     </script>
   </body>
 </html>
