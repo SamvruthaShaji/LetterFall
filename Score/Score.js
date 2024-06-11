@@ -1,5 +1,5 @@
 function createConfetti() {
-    const colors = ['DC143C', '#1E90FF', '#228B22', '#9ACD32', '#4B0082', '#800080'];
+    const colors = ['#DC143C', '#1E90FF', '#228B22', '#9ACD32', '#4B0082', '#800080'];
     const confettiCount = 100;
     
     for (let i = 0; i < confettiCount; i++) {

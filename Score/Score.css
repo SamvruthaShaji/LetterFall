@@ -1,28 +1,57 @@
-body{
+body {
     background-image: url(../Assets/ScorePage.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     margin: 0;
-    background-color: #F9DA88;
-}
-
-.confetti {
+    background-color: #f9da88;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .button-container {
     position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .action-button {
+    background-color: transparent;
+    color: #6b4937;
+    border: 3px solid #6b4937;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .action-button:hover {
+    background-color: #6b4937;
+    color: white;
+  }
+  
+  .confetti {
+    position: absolute;
+    top: 0;
     background: rgb(210, 68, 68);
     width: 10px;
     height: 10px;
     border-radius: 0%;
     animation: confettiFall linear infinite;
-}
-
-@keyframes confettiFall {
+  }
+  
+  @keyframes confettiFall {
     0% {
-        transform: translateY(-100vh) rotate(0deg);
+      transform: translateY(-100vh) rotate(0deg);
     }
     100% {
-        transform: translateY(100vh) rotate(720deg);
+      transform: translateY(100vh) rotate(720deg);
     }
-}
-
+  }
