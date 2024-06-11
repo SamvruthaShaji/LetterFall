@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=clear, initial-scale=1.0">
     <title>Document</title>
-
+    <script type="module" src="..\firebase\signup-js.js" defer></script>
     <link rel="stylesheet" href="signup.css">
 </head>
 <body>
     <section class="signup">
       <div class="signup-input">
-        <input type="text" id="signupusername" placeholder="Username">
-        <input type="text" id="signupemail" placeholder="Email">
-        <input type="text" id="signuppassword" placeholder="Password"> 
+        <input type="text" id="user-name" placeholder="Username">
+        <input type="text" id="signup-email" placeholder="Email">
+        <input type="password" id="signup-password" placeholder="Password"> 
       </div>
       <div class="signup-button">
-          <button id="signup-btn">CREATE</button>
+          <button id="signupid">CREATE</button>
       </div>
+      <p id="message"></p>
     </section>
     <a href="../instructions/instructions.html" class="BackButton">&#8592; Back</a>
     <script src="signup.js"></script>
