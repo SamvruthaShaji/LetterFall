@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             function senddata() {
                 const final_score_scoreboard = `${totalScore}`
                 localStorage.setItem('myData',final_score_scoreboard);
-                window.location.href = './Hello.html'
+                window.location.href = '../Score/Score.html'
             }
             senddata();
         },1000)
