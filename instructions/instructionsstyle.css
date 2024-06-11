@@ -4,6 +4,7 @@ html,
 body {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 body {
@@ -69,4 +70,9 @@ body {
 .btn1 {
   text-decoration: none;
   color: white;
+  margin-top: -100px;
+}
+
+.ins {
+  font-size: 60px;
 }
