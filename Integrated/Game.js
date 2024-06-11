@@ -218,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const wordUppercase = word.toUpperCase();
         const wordElement = document.createElement('li');
         wordElement.textContent = wordUppercase;
-        wordElement.textContent = wordUpperCase;
         validWordsContainer.appendChild(wordElement);
     }
 
