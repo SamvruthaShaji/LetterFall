@@ -88,5 +88,3 @@ function remove() {
         i++;
     }
 }
-
-

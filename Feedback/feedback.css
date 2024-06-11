@@ -13,12 +13,13 @@ body {
 
 .container {
   width: 30%;
-
-  margin: 90px;
+  margin-left: 150px;
+  margin-top: -20px;
 }
 
 h1 {
   color: #333;
+  font-size: 4em;
 }
 
 .feedback-form {
@@ -123,7 +124,18 @@ input[type="submit"]:hover {
 
 .BackButton {
   position: absolute;
-  top: 100px;
+  top: 350px;
+  right: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #6b4937;
+  border: 3px solid #6b4937;
+  padding: 5px;
+}
+
+.ReviewButton {
+  position: absolute;
+  top: 400px;
   right: 20px;
   font-size: 18px;
   text-decoration: none;
