@@ -23,7 +23,7 @@ body {
     color: #6B4937;
     text-align: center;
     padding-top: 30px;
-    animation: countdown-animation 1s ease-in-out;
+    animation: countdown-animation 6s ease-in-out;
 }
 
 @keyframes countdown-animation {

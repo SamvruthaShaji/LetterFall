@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCountdown() {
         countdownElement.textContent = countdownValue > 0 ? countdownValue : "Go!";
-        countdownElement.classList.add('animate');
-        void countdownElement.offsetWidth; // Trigger reflow to restart the animation
-        countdownElement.classList.remove('animate');
-        countdownElement.classList.add('animate');
 
         if (countdownValue > 0) {
             countdownValue--;
