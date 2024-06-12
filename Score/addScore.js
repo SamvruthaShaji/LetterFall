@@ -7,6 +7,7 @@ import {
   getDatabase,
   ref,
   get,
+  push,
   set,
   update,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
@@ -49,20 +50,21 @@ function createConfetti() {
 }
 
 async function saveUserScore(email, username, score) {
-  const userRef = ref(db, "scoreboard/" + email.replace(".", "_"));
-  const userSnapshot = await get(userRef);
+  const scoreboardRef = ref(db, "scoreboard");
+  const userSnapshot = await get(scoreboardRef);
+  
+  let userEntryKey = null;
+  userSnapshot.forEach((childSnapshot) => {
+    const childData = childSnapshot.val();
+    if (childData.email === email) {
+      userEntryKey = childSnapshot.key;
+    }
+  });
 
-  if (!userSnapshot.exists()) {
-    // If the document does not exist, create a new one
-    await set(userRef, {
-      username: username,
-      score: score,
-    });
-
-    console.log("New user score added to the database");
-  } else {
+  if (userEntryKey) {
     // If the document exists, update the score if the new score is higher
-    const userData = userSnapshot.val();
+    const userRef = ref(db, "scoreboard/" + userEntryKey);
+    const userData = (await get(userRef)).val();
     if (userData.score < score) {
       await update(userRef, {
         score: score,
@@ -71,6 +73,15 @@ async function saveUserScore(email, username, score) {
     } else {
       console.log("Existing score is higher, no update performed");
     }
+  } else {
+    // If the document does not exist, create a new one
+    const newUserRef = push(scoreboardRef);
+    await set(newUserRef, {
+      email: email,
+      username: username,
+      score: score,
+    });
+    console.log("New user score added to the database");
   }
 }
 
