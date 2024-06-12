@@ -80,6 +80,39 @@ function gfg(n) {
     output.innerText = "Rating is: " + n + "/5";
 }
 
+// // Function to update rating
+// function gfg(n) {
+//     remove();
+//     for (let i = 0; i < n; i++) {
+//         let cls;
+//         if (n == 1) cls = "one";
+//         else if (n == 2) cls = "two";
+//         else if (n == 3) cls = "three";
+//         else if (n == 4) cls = "four";
+//         else if (n == 5) cls = "five";
+//         stars[i].className = "star " + cls;
+//     }
+//     output.innerText = "Rating is: " + n + "/5";
+// }
+
+// // Callback function with error handling inside
+// function updateRatingCallback(n) {
+//     // Check if n is within the valid range
+//     if (n < 1 || n > 5) {
+//         throw new Error("Rating must be between 1 and 5.");
+//     }
+//     gfg(n);
+// }
+
+// // Example usage:
+// try {
+//     updateRatingCallback(6); // Call the function with an invalid rating
+// } catch (error) {
+//     console.error("Error occurred while updating rating:", error.message);
+//     // You can handle the error here, like showing an error message to the user.
+// }
+
+
 // To remove the pre-applied styling
 function remove() {
     let i = 0;
