@@ -33,7 +33,7 @@ async function signUp() {
             password: password // Note: Storing plain passwords is a bad practice; this is for demonstration only
         });
         document.getElementById('message').innerText = 'Sign Up Successful!';
-        window.location.href = "../signin/signin.html";
+        window.location.href = "../AccountCreated/accountcreated.html";
     } catch (error) {
         document.getElementById('message').innerText = error.message;
     }
