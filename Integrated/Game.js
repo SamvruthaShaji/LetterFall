@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         letterElement.classList.add('letter');
         gameContainer.appendChild(letterElement);
         const isVowel = vowels.includes(letter);
-        const speed = isVowel ? Math.random() * 2 + 3 : Math.random() * 5 + 3; // Vowels: 1-3s, Consonants: 3-8s
+        const speed = isVowel ? Math.random() * 2 + 2 : Math.random() * 2 + 3; // Vowels: 1-3s, Consonants: 3-8s
         letterElement.style.animationDuration = `${speed}s`;
         letterElement.style.left = `${Math.random() * 90}%`; // Random horizontal position
 
@@ -142,6 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     submitWordsButton.addEventListener('click', submitWord);
 
+    function shuffleCaughtLetters() {
+        caughtLetters = caughtLetters.sort(() => Math.random() - 0.5);
+        showCaughtLetters();
+    }
+    
     shuffleLettersButton.addEventListener('click', () => {
         shuffleCaughtLetters();
     });
@@ -195,11 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Error validating word "${word}":`, error);
             return false;
         }
-    }
-
-    function shuffleCaughtLetters() {
-        caughtLetters = caughtLetters.sort(() => Math.random() - 0.5);
-        showCaughtLetters();
     }
 
     function calculateFinalScore() {
