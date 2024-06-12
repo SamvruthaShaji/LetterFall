@@ -15,6 +15,35 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
  
 // Function to retrieve data from the Realtime Database and update the leaderboard
+// function updateLeaderboard() {
+//   const leaderboardRef = database.ref('scoreboard');
+ 
+//   leaderboardRef.once('value', (snapshot) => {
+//     const leaderboardData = snapshot.val();
+//     const leaderboardList = document.getElementById('leaderboardList');
+ 
+//     // Clear existing leaderboard entries
+//     leaderboardList.innerHTML = '';
+ 
+//     // Convert leaderboardData object to an array
+//     const leaderboardArray = Object.entries(leaderboardData);
+ 
+//     // Sort leaderboardArray by score in descending order
+//     leaderboardArray.sort((a, b) => b[1].score - a[1].score);
+ 
+//     // Loop through each entry in the sorted leaderboard data
+//     leaderboardArray.forEach(([key, entry]) => {
+//       // Create list item for each entry
+//       const listItem = document.createElement('li');
+//       listItem.textContent = `${entry.email}: ${entry.score}`;
+ 
+//       // Append list item to leaderboard list
+//       leaderboardList.appendChild(listItem);
+//     });
+//   });
+// }
+ 
+// Function to retrieve data from the Realtime Database and update the leaderboard
 function updateLeaderboard() {
   const leaderboardRef = database.ref('scoreboard');
  
@@ -31,8 +60,11 @@ function updateLeaderboard() {
     // Sort leaderboardArray by score in descending order
     leaderboardArray.sort((a, b) => b[1].score - a[1].score);
  
-    // Loop through each entry in the sorted leaderboard data
-    leaderboardArray.forEach(([key, entry]) => {
+    // Take only the top 5 entries
+    const top5Entries = leaderboardArray.slice(0, 5);
+ 
+    // Loop through each entry in the top 5
+    top5Entries.forEach(([key, entry]) => {
       // Create list item for each entry
       const listItem = document.createElement('li');
       listItem.textContent = `${entry.email}: ${entry.score}`;
@@ -42,6 +74,7 @@ function updateLeaderboard() {
     });
   });
 }
+ 
  
 // Call the updateLeaderboard function to fetch data and update the leaderboard
 updateLeaderboard();

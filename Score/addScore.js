@@ -52,7 +52,7 @@ function createConfetti() {
 async function saveUserScore(email, username, score) {
   const scoreboardRef = ref(db, "scoreboard");
   const userSnapshot = await get(scoreboardRef);
-  
+
   let userEntryKey = null;
   userSnapshot.forEach((childSnapshot) => {
     const childData = childSnapshot.val();
