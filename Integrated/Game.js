@@ -140,16 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    submitWordsButton.addEventListener('click', submitWord);
-
     function shuffleCaughtLetters() {
         caughtLetters = caughtLetters.sort(() => Math.random() - 0.5);
         showCaughtLetters();
     }
-    
+
     shuffleLettersButton.addEventListener('click', () => {
         shuffleCaughtLetters();
     });
+
+    submitWordsButton.addEventListener('click', submitWord);
 
     function submitWord() {
         const word = inputWords.value.trim();
