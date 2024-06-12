@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="Score.css" />
+    <script type="module" src="addScore.js" defer></script>
   </head>
   <body>
     <div>
-      <p style="position: absolute; font-size: 70px; top: 0px; left: 500px;">SCORE</p>
+      <p style="position: absolute; font-size: 70px; top: 0px; left: 500px">
+        SCORE
+      </p>
       <p id="dataDisplay"></p>
     </div>
     <div class="button-container">
-      <button class="action-button" onclick="window.location.href='../Integrated/Game.html'">Play Again</button>
-      <button class="action-button" onclick="window.location.href='../Leaderboard/Leaderboard.html'">Leaderboard</button>
-      <button class="action-button" onclick="window.location.href='../Feedback/feedback.html'">Feedback</button>
+      <button
+        class="action-button"
+        onclick="window.location.href='../Integrated/Game.html'"
+      >
+        Play Again
+      </button>
+      <button
+        class="action-button"
+        onclick="window.location.href='../Leaderboard/Leaderboard.html'"
+      >
+        Leaderboard
+      </button>
+      <button
+        class="action-button"
+        onclick="window.location.href='../Feedback/feedback.html'"
+      >
+        Feedback
+      </button>
     </div>
-
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
-    <script src="Score.js"></script>
     <script>
       const receivedData = localStorage.getItem("myData");
+ 
       const dataDisplay = document.getElementById("dataDisplay");
-      dataDisplay.textContent = receivedData;
-
-      window.onload = function () {
-        const email = localStorage.getItem("email");
-        const score = receivedData;
-        const username = "user";
-        saveUserScore(email, username, score);
-      };
+      dataDisplay.textContent = +receivedData;
     </script>
   </body>
 </html>
