@@ -2,17 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url("../Assets/feedback.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
     background-color: #F9DA88;
-   
 }
 
 .container {
     width: 80%;
     margin: 20px auto;
-    background-color: #F9DA88;
+    background-color: #FFFFFF;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -44,4 +40,20 @@ h1 {
 
 .feedback-item p:last-child {
     margin-bottom: 0;
+}
+
+.show-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #45a049;
 }
